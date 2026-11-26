@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launchpad | Set up for life</title>
+<meta name="description" content="Launchpad: one-on-one sessions that give 17 to 25 year olds the money and life skills school doesn't teach. A JCI + Launchpad collaboration.">
+<meta property="og:title" content="Launchpad | Set up for life">
+<meta property="og:description" content="Launchpad: one-on-one sessions that give 17 to 25 year olds the money and life skills school doesn't teach. A JCI + Launchpad collaboration.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='104' fill='%231E3A2D'/%3E%3Cpath d='M86 404 C 200 400, 330 330, 404 150' fill='none' stroke='%23AF8849' stroke-width='22' stroke-linecap='round'/%3E%3Cpath d='M404 150 l-52 22 M404 150 l14 54' fill='none' stroke='%23AF8849' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>body{margin:0}img{max-width:100%}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one green cover band carrying the brand, then a single reading column of
+   quiet white and cream sections; the numbered steps and the price pair are the only set pieces. */
+:root {
+  --green: #1E3A2D;        /* brand ground: hero, price card, footer */
+  --gold: #AF8849;         /* brand accent */
+  --gold-text: #8A6A32;    /* gold dark enough for small text on light */
+  --bg: #FFFFFF;
+  --panel: #FBF5E6;        /* cream */
+  --note: #FFF4CC;
+  --ink: #1F2A24;
+  --head: #1E3A2D;
+  --muted: #5A6D62;
+  --line: #DDD5C2;
+  --on-green: #FFFFFF;
+  --on-green-soft: #D8DFDA;
+  --font: Inter, Arial, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111C16; --panel: #1A2A21; --note: #2C2A1B; --ink: #E6ECE8; --head: #F3F6F4;
+    --muted: #A3B3A9; --line: #33453B; --gold-text: #D2AC6C; --green: #1E3A2D; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111C16; --panel: #1A2A21; --note: #2C2A1B; --ink: #E6ECE8; --head: #F3F6F4;
+  --muted: #A3B3A9; --line: #33453B; --gold-text: #D2AC6C; --green: #1E3A2D; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { max-width: 940px; margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.read { max-width: 66ch; }
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+
+/* hero */
+.hero { background: var(--green); color: var(--on-green); border-bottom: 5px solid var(--gold);
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px)); padding-top: calc(env(safe-area-inset-top, 0px) + 1.75rem);
+  padding-bottom: 3.25rem; position: relative; overflow: hidden; }
+.hero .wrap { position: relative; display: flex; flex-direction: column; gap: 2.75rem; }
+.hero .logo { width: min(100%, 420px); height: auto; display: block; }
+.hero .arc { position: absolute; right: -90px; bottom: -70px; width: 460px; opacity: .14; pointer-events: none; }
+.eyebrow { color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.hero h1 { font-size: clamp(2.5rem, 7.2vw, 4.25rem); line-height: 1.04; font-weight: 800; letter-spacing: -.03em; margin-top: .7rem; }
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero .sub { font-size: clamp(1.05rem, 2.2vw, 1.25rem); line-height: 1.5; color: var(--on-green-soft); max-width: 36em; margin-top: 1.25rem; }
+.hero .age { color: var(--on-green-soft); font-size: .92rem; margin-top: .5rem; opacity: .85; }
+.btn { display: inline-block; background: var(--gold); color: #fff; font-weight: 700; text-decoration: none;
+  padding: .8rem 1.5rem; border-radius: 999px; margin-top: 1.75rem; }
+.btn:hover { filter: brightness(1.08); }
+
+/* sections */
+section { padding-block: 3.25rem; }
+section + section { border-top: 1px solid var(--line); }
+section h2 { color: var(--head); font-size: clamp(1.6rem, 3.6vw, 2.1rem); font-weight: 800; letter-spacing: -.02em; line-height: 1.15; margin: .45rem 0 1.25rem; }
+section .eyebrow { color: var(--gold-text); }
+.lead { font-size: 1.2rem; line-height: 1.5; color: var(--head); font-weight: 500; }
+strong { color: var(--head); font-weight: 700; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+.steps li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1rem; }
+.num { width: 3rem; height: 3rem; border-radius: .7rem; background: var(--green); color: var(--on-green); font-weight: 800; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--gold); }
+.steps h3 { color: var(--head); font-size: 1.08rem; font-weight: 700; margin-bottom: .2rem; }
+.steps p { font-size: .98rem; }
+
+/* topics */
+.topics { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.25rem; }
+.topics li { border: 1px solid var(--gold); border-radius: 999px; padding: .35rem .95rem; font-size: .93rem; font-weight: 500; color: var(--head); }
+
+/* pricing */
+.prices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.price { border-radius: .9rem; padding: 1.75rem; display: flex; flex-direction: column; gap: .4rem; }
+.price h3 { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.price .amt { font-size: 3rem; font-weight: 800; line-height: 1.1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.price .amt small { font-size: 1rem; font-weight: 500; letter-spacing: 0; }
+.price .tick { margin-top: .8rem; display: flex; flex-direction: column; gap: .5rem; font-size: .97rem; }
+.tick li { position: relative; padding-left: 1.2rem; }
+.tick li::before { content: ""; position: absolute; left: 0; top: .62em; width: .45rem; height: .45rem; border-radius: 50%; background: var(--gold); }
+.price.main { background: var(--green); color: var(--on-green); }
+.price.main h3 { color: var(--gold); }
+.price.main .sub, .price.main .tick { color: var(--on-green-soft); }
+.price.follow { background: var(--panel); border-top: 4px solid var(--gold); }
+.price.follow h3 { color: var(--gold-text); }
+.price.follow .amt { color: var(--head); }
+.price.follow .amt small, .price.follow .sub { color: var(--muted); }
+.plain { margin-top: 1.25rem; font-weight: 600; color: var(--head); }
+.note { background: var(--note); border-left: 5px solid var(--gold); border-radius: 0 .6rem .6rem 0; padding: 1.1rem 1.4rem; margin-top: 1.25rem; }
+
+/* disclaimer + contact */
+.fine { font-size: .95rem; color: var(--muted); }
+.contact { background: var(--panel); border-radius: .9rem; padding: 1.75rem; margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; }
+.contact dt { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); }
+.contact dd { margin: .15rem 0 0; }
+.placeholder { display: inline-block; border: 1.5px dashed var(--gold); border-radius: .4rem; padding: .15rem .6rem; color: var(--muted); font-weight: 600; user-select: all; }
+dl { margin: 0; }
+
+footer { background: var(--green); color: var(--on-green-soft); border-top: 5px solid var(--gold); padding-block: 2rem; font-size: .88rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+footer svg { height: 44px; width: auto; display: block; }
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .steps, .prices, .contact { grid-template-columns: minmax(0, 1fr); }
+  section { padding-block: 2.5rem; }
+  .hero .arc { width: 300px; right: -110px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="arc" viewBox="0 0 512 512" aria-hidden="true"><path d="M40 440 C 200 430, 380 340, 460 90" fill="none" stroke="#AF8849" stroke-width="16" stroke-linecap="round"/><path d="M460 90 l-58 26 M460 90 l16 60" fill="none" stroke="#AF8849" stroke-width="16" stroke-linecap="round"/></svg>
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 1960 300" role="img" aria-label="JCI, Jones Combined Industries, plus Launchpad: Set up for life" font-family="Inter, Arial, Helvetica, sans-serif">
+      <text x="20" y="170" font-weight="800" font-size="130" letter-spacing="6" fill="#FFFFFF">JCI</text>
+      <text x="24" y="226" font-weight="600" font-size="25" letter-spacing="5" fill="#D8DFDA">JONES COMBINED INDUSTRIES</text>
+      <text x="548" y="178" font-weight="300" font-size="120" fill="#AF8849">+</text>
+      <g transform="translate(690,0)">
+        <g transform="translate(20,22) scale(0.5)">
+          <rect x="6" y="6" width="500" height="500" rx="100" fill="#1E3A2D" stroke="#AF8849" stroke-width="12"/>
+          <path d="M86 404 C 200 400, 330 330, 404 150" fill="none" stroke="#AF8849" stroke-width="22" stroke-linecap="round"/>
+          <path d="M404 150 l-52 22 M404 150 l14 54" fill="none" stroke="#AF8849" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="92" y="330" font-weight="800" font-size="210" letter-spacing="-8" fill="#FFFFFF">LP</text>
+        </g>
+        <text x="316" y="168" font-weight="800" font-size="118" letter-spacing="2" fill="#FFFFFF">LAUNCHPAD</text>
+        <text x="322" y="236" font-weight="600" font-size="40" letter-spacing="12" fill="#AF8849">SET UP FOR LIFE</text>
+      </g>
+    </svg>
+    <div>
+      <p class="eyebrow">A JCI + Launchpad collaboration</p>
+      <h1>Set up for life.<br><em>Starting now.</em></h1>
+      <p class="sub">One-on-one sessions that give 17 to 25 year olds the money and life skills school doesn't teach.</p>
+      <p class="age">Older ages considered case by case.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe1LkeeshHPKIvKweIBX-GTMV8RsS_ZaATBjsswOXKkYKNEFw/viewform" target="_blank" rel="noopener">Book a session</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="what">
+    <div class="wrap">
+      <p class="eyebrow">Welcome</p>
+      <h2>What is Launchpad?</h2>
+      <div class="read stack">
+        <p class="lead">Launchpad sets young adults up for success now, instead of leaving them to work it out the hard way over the next 10 to 15 years.</p>
+        <p>It is a personal, one-on-one program. The main focus is money: budgeting, tax, super, investing and the habits that build wealth quietly in the background. Around that we cover the parts of adult life school doesn't teach.</p>
+        <p>We also discuss simple <strong>set and forget</strong> systems to put in place, so good habits keep working without willpower. You leave with clear goals and the confidence to own your finances.</p>
+      </div>
+      <ul class="topics" aria-label="Topics you can choose from">
+        <li>Money basics</li><li>Tax</li><li>Super and investing</li><li>Insurance and buying a home</li>
+        <li>Small business</li><li>Grants for business ideas</li><li>Your rights</li><li>Life admin and wellbeing</li>
+      </ul>
+      <p class="fine" style="margin-top:.9rem">You choose the topics, and your session is built around them.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="eyebrow">Four steps</p>
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><div class="num">1</div><div><h3>The questionnaire</h3><p>A PDF you fill in on your phone: what you have in place, the topics you want, your goals and your questions.</p></div></li>
+        <li><div class="num">2</div><div><h3>Your money snapshot and budget</h3><p>An assessment of your current financial position, turned into a simple working budget.</p></div></li>
+        <li><div class="num">3</div><div><h3>Your one-on-one session</h3><p>1.5 hours, in person or online. We set short and long term financial goals, answer your questions and set things up so you leave with ownership of your plan.</p></div></li>
+        <li><div class="num">4</div><div><h3>Your summary, guide and goals</h3><p>It doesn't finish at 1.5 hours. Afterwards you receive a written summary of what we discussed, a guide to follow and your goals.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="cost">
+    <div class="wrap">
+      <p class="eyebrow">The session</p>
+      <h2>What it costs</h2>
+      <div class="prices">
+        <div class="price main">
+          <h3>The Launchpad session</h3>
+          <p class="amt">$500</p>
+          <p class="sub">One-off. Everything you need to get started.</p>
+          <ul class="tick">
+            <li>The pre-session questionnaire</li>
+            <li>An assessment of your current financial position and a working budget</li>
+            <li>A 1.5 hour one-on-one session, in person or online</li>
+            <li>A written summary, guide and goals afterwards</li>
+          </ul>
+        </div>
+        <div class="price follow">
+          <h3>Follow-up sessions</h3>
+          <p class="amt">$185 <small>per 1 hour session</small></p>
+          <p class="sub">Optional. Whenever you want to go further.</p>
+          <ul class="tick">
+            <li>Go deeper, cover a new topic or check progress</li>
+            <li>Booked and paid for by the young adult</li>
+            <li><strong>$100 referrals:</strong> refer someone to help and receive $100 off a follow-up session!</li>
+          </ul>
+        </div>
+      </div>
+      <p class="plain">No products sold. No commissions. These fees are the only charges.</p>
+      <div class="note read">
+        <p><strong>For parents, guardians or funders.</strong> You are encouraged to fund, or help fund, the initial session. The price is there on purpose: when a session has a real cost, people turn up prepared and use it well. Follow-ups are booked and paid for by the young adult, because Launchpad is about financial ownership and accountability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mitch">
+    <div class="wrap">
+      <p class="eyebrow">Who runs it</p>
+      <h2>About Mitch, and why Launchpad was created</h2>
+      <div class="read stack">
+        <p>I'm Mitch. I come from a diverse working background, both blue collar and white collar: mining, tourism, business, community engagement, technology, defence, health and education, to name a few. I have worked for an employer or run my own business since I was 13, and since 17 I have never had fewer than two jobs at once.</p>
+        <p>I'm a university graduate, a coach, and still work as a paramedic. I run business initiative and activation projects for councils and businesses, I'm involved in venture capital, commercial property and business management, and I own and run three businesses, including Launchpad.</p>
+        <p>I was lucky to be taught about money early, and to have fantastic mentors who guided me wisely. As a parent of two, I understand the weight parents carry in making sure their kids are ready for life. School provides an education, but most don't provide guidance for the real life decisions that come after it. Taught early, those decisions can build a stable platform for a successful and financially secure life. That is where Launchpad was born.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="disclaimer">
+    <div class="wrap">
+      <p class="eyebrow">Please read</p>
+      <h2>Empowerment and confidence, not financial advice</h2>
+      <p class="read fine">Launchpad is about financial empowerment and confidence, not financial advice. Everything on this page, in the questionnaire and in the sessions is general information only. It is not personal financial, tax or legal advice, and it is not professional life advice or counselling. We explain how things work so you can make your own informed decisions, and those decisions are yours. Investing carries risk and no result is guaranteed. Who to see for professional advice, and when, is discussed in your session.</p>
+    </div>
+  </section>
+
+  <section id="get-started">
+    <div class="wrap">
+      <p class="eyebrow">Ready?</p>
+      <h2>Getting started</h2>
+      <p class="read">Leave your name, contact details and a short message. Mitch will be in touch to answer your questions, send you the questionnaire and agree on a time that suits.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe1LkeeshHPKIvKweIBX-GTMV8RsS_ZaATBjsswOXKkYKNEFw/viewform" target="_blank" rel="noopener">Get in touch or book a session</a>
+      <p class="fine" style="margin-top:.9rem">Opens a short enquiry form in a new tab. It takes about a minute.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg viewBox="700 10 1250 270" role="img" aria-label="Launchpad: Set up for life" font-family="Inter, Arial, Helvetica, sans-serif">
+      <g transform="translate(690,0)">
+        <g transform="translate(20,22) scale(0.5)">
+          <rect x="6" y="6" width="500" height="500" rx="100" fill="#1E3A2D" stroke="#AF8849" stroke-width="12"/>
+          <path d="M86 404 C 200 400, 330 330, 404 150" fill="none" stroke="#AF8849" stroke-width="22" stroke-linecap="round"/>
+          <path d="M404 150 l-52 22 M404 150 l14 54" fill="none" stroke="#AF8849" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="92" y="330" font-weight="800" font-size="210" letter-spacing="-8" fill="#FFFFFF">LP</text>
+        </g>
+        <text x="316" y="168" font-weight="800" font-size="118" letter-spacing="2" fill="#FFFFFF">LAUNCHPAD</text>
+        <text x="322" y="236" font-weight="600" font-size="40" letter-spacing="12" fill="#AF8849">SET UP FOR LIFE</text>
+      </g>
+    </svg>
+    <p>Jones Combined Industries Pty Ltd · ABN 34 674 614 558 · Silver Sands WA</p>
+  </div>
+</footer>
+</body>
+</html>
